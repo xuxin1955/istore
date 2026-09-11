@@ -30,6 +30,15 @@ TARGET_CONFIGURE_OPTS= FRONTEND_DIST="$(BUILD_DIR)/istore-ui-$(ISTORE_UI_VERSION
 TARGET_CONFIGURE_OPTS+= SED="$(SED)"
 TARGET_CONFIGURE_OPTS+= USE_APK="$(CONFIG_USE_APK)"
 
+define Package/luci-app-store
+  SECTION:=luci
+  CATEGORY:=LuCI
+  SUBMENU:=Applications
+  TITLE:=$(LUCI_TITLE)
+  DEPENDS:=$(LUCI_DEPENDS)
+  DEFAULT:=y
+endef
+
 define Package/luci-app-store/conffiles
 /etc/.app_store.id
 /etc/config/istore
